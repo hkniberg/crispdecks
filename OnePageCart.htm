@@ -6,721 +6,333 @@
     http://store.esellerate.net/s.asp?s=STR3991639020&Cmd=BUY&SKURefnum=SKU89825823895
 -->
 <BODY>
+
 <_CONTENT>
-    <!--the following checks to see if there are any items in the cart. If not, then it redirects to the catalog page-->
-    <_goto _Page="_Layout.CatalogPage" _if="_Cart.ItemCount <= 0">
-        <title>Decks - Planning Poker & Jimmy Cards</title>
-
-        <!--BEGIN TABLE THAT HOLDS THE HEADER FOR THE PAGE-->
-        <table border=0 cellpadding=2 cellspacing=1 bgcolor="#666666" width=100%>
-            <tr bgcolor="#f1f1f1">
-                <td class="bodycopy" align="center"><b>Purchase Decks</b></td>
-            </tr>
-        </table>
-        <!--END TABLE THAT HOLDS THE HEADER FOR THE PAGE-->
+    <style type="text/css">
+        .margin-top {
+            margin-top: 10px;
+        }
+    </style>
 
 
+    <title>Decks - Planning Poker & Jimmy Cards</title>
+
+    <!--BEGIN TABLE THAT HOLDS THE HEADER FOR THE PAGE-->
+    <table border=0 cellpadding=2 cellspacing=1 bgcolor="#666666" width=100%>
+        <tr bgcolor="#f1f1f1">
+            <td class="bodycopy" align="center"><b>Purchase Decks</b></td>
+        </tr>
+    </table>
+    <!--END TABLE THAT HOLDS THE HEADER FOR THE PAGE-->
+
+    <p>
+        The price includes shipping.
+    </p>
+    <p>
+        <b>Delivery time (Scandinavia):</b> usually 3-5 business days<br/>
+        <b>Delivery time (other countries):</b> varies. we use standard shipping so it depends on the country.
+    </p>
+    <p>
+        <b>Contact / questions - Poker Planning: </b> <a href="mailto:planningpoker@crisp.se">planningpoker@crisp.se</a><br/>
+        <b>Contact / questions - Jimmy Cards: </b> <a href="mailto:jimmy.janlen@crisp.se">jimmy.janlen@crisp.se</a>
+    </p>
+
+    <!--
+    <p>
+    <div style="width: 400px; color:red;">
+    <b>NOTE:</b> We are on vacation, upcoming shipments will be delayed until the last week of july. Thanks for your patience :o)
+    </div>
+    -->
+
+    <!--BEGINS THE TABLE THAT HOLDS THE CURRENCY AND COUPON TABLES-->
+    <table border=0 cellpadding=0 cellspacing=0 width=100% class="margin-top">
+        <tr>
+            <td align=left>
+
+                <!--BEGINS THE TABLE THAT HOLDS CURRENCY-->
+                <!--the following allows your customers to change the currency in the shopping cart-->
+                <table border=0 cellpadding=0 cellspacing=0>
+                    <tr valign=middle>
+                        <td class="bodycopy" align=right><b>Currency:</b>&nbsp;</td>
+                        <td class="bodycopy"><select name="_Shopper.Currency" class="inputBox"></select></td>
+                    </tr>
+                </table>
+                <!--ENDS THE TABLE THAT HOLDS CURRENCY-->
+
+            </td>
+            <td align=right>
+
+            </td>
+        </tr>
+    </table>
+    <!--ENDS THE TABLE THAT HOLDS THE CURRENCY AND COUPON TABLES-->
+
+    <!--BEGINS THE TABLE SHOPPING CART TABLE-->
+    <table border=0 cellpadding=4 cellspacing=1 bgcolor="#D2D2D2" class="margin-top">
+        <tr valign=top bgcolor="#E8E8E8">
+            <td class="bodycopy" align="left"><b>Product</b></td>
+            <td class="bodycopy" align="left"><b>Quantity</b></td>
+            <td class="bodycopy" align="left"><b>Price</b></td>
+            <td class="bodycopy" align="left"><b>Total</b></td>
+            <td class="bodycopy">&nbsp;</td>
+        </tr>
+        <!--BEGINS THE LOOP FOR THE ROWS OF THE SHOPPING CART-->
+        <!--the following loop runs through for each product that has been added to your cart-->
+        <_LOOP var="_Cart">
+            <_ROW>
+                <_COLUMN>
+                    <tr valign=top bgcolor="#FFFFFF">
+                        <td class="bodycopy" align="left">_cartitem.skuname</td>
+                        <td class="bodycopy" align="left"><input name="_cartitem.quantity" type="text"
+                                                                 id="_cartitem.quantity" size="3" maxlength="3"
+                                                                 class="inputBox"> decks
+
+                            <!-- If it's a Planning Poker deck... display "(Each deck is for 4 people)" -->
+                            <span _if="_cartitem.SkuRefNum = 'SKU89825823895' "><br>
+                                (Each deck is for 4 people)
+                            </span>
+                        </td>
+                        <td class="bodycopy" align="left">_cartitem.priceeach</td>
+                        <td class="bodycopy" align="left">_cartitem.priceext</td>
+                        <td class="bodycopy"><input name="Submit222" type="submit" value="Recalculate"
+                                                    class="inputSubmit" _cmd="goto" _Page="_Layout.CurrentPage">
+                        </td>
+                    </tr>
+                </_COLUMN>
+            </_ROW>
+        </_LOOP>
+        <!--ENDS THE LOOP FOR THE ROWS OF THE SHOPPING CART-->
+    </table>
+    <!--ENDS THE TABLE THAT HOLDS THE SHOPPING CART-->
+
+    <p>
+        <b>Quick links for adding more:</b><br/>
+        Add one <a href="http://store.esellerate.net/s.asp?s=STR3991639020&Cmd=BUY&SKURefnum=SKU89825823895">Planning
+        Poker</a> deck to the order<br/>
+        Add one <a href="http://store.esellerate.net/s.asp?s=STR3991639020&Cmd=BUY&SKURefnum=SKU33361778440">Jimmy
+        Cards Red</a> deck to the order<br/>
+        Add one <a href="http://store.esellerate.net/s.asp?s=STR3991639020&Cmd=BUY&SKURefnum=SKU59616654790">Jimmy
+        Cards Black</a> deck (for mature teams) to the order<br/>
+        Add one <a href="http://store.esellerate.net/s.asp?s=STR3991639020&Cmd=BUY&SKURefnum=SKU06925438075">Jimmy
+        Cards Blue</a> deck (for leaders) to the order<br/>
+    </p>
+
+    <p>
+        <b>Questions</b><br/>
+        <a href="https://www.crisp.se/bocker-och-produkter/planning-poker">What is Planning Poker?</a><br/>
+        <a href="https://www.crisp.se/bocker-och-produkter/jimmy-cards">What are Jimmy Cards?</a>
+    </p>
+
+    <br/>
 
 
-        <p>
-        <div style="width: 600px;">
-            The price includes shipping. <br/><br/>
-            <b>Delivery time (Scandinavia):</b> usually 3-5 business days<br/>
-            <b>Delivery time (other countries):</b> varies. we use standard shipping so it depends on the country.<br/><br/>
-            <b>Contact / questions - Poker Planning: </b> <a href="mailto:planningpoker@crisp.se">planningpoker@crisp.se</a><br/>
-            <b>Contact / questions - Jimmy Cards: </b> <a href="mailto:jimmy.janlen@crisp.se">jimmy.janlen@crisp.se</a>
-        </div>
+    <!--BEGINS THE TABLE THAT HOLDS THE PERSONAL INFORMATION & BILLING INFORMATION TABLES-->
+    <table border=0 cellpadding=0 cellspacing=0 width=100%>
+        <tr valign=top>
+            <td class="bodycopy">
 
-        <!--
-        <p>
-        <div style="width: 400px; color:red;">
-        <b>NOTE:</b> We are on vacation, upcoming shipments will be delayed until the last week of july. Thanks for your patience :o)
-        </div>
-        -->
+                <!--BEGINS THE TABLE THAT HOLDS THE PERSONAL INFORMATION HEADER-->
+                <table border=0 cellpadding=0 cellspacing=0 width=100%>
+                    <tr valign=middle>
+                        <td class="bodycopy" bgcolor="#D2D2D2">
+                            <b>PERSONAL INFORMATION AND SHIPPING ADDRESS</b></td>
+                    </tr>
+                    <tr>
+                        <td height=10></td>
+                    </tr>
+                </table>
+                <!--ENDS THE TABLE THAT HOLDS THE PERSONAL INFORMATION HEADER-->
 
-        <p>
+                <!--BEGINS THE TABLE THAT HOLDS PERSONAL INFORMATION-->
+                <table border=0 cellpadding=0 cellspacing=0>
+                    <tr>
+                        <td colspan="2" class="redcopy"><img src="images/_required.gif"><b>indicates required fields</b>
+                        </td>
+                    </tr>
 
-            <!--BEGINS THE TABLE THAT HOLDS THE CURRENCY AND COUPON TABLES-->
-        <table border=0 cellpadding=0 cellspacing=0 width=100%>
-            <tr>
-                <td align=left>
+                    <tr valign=middle>
+                        <td class="bodycopy" align=right width=160><b>First Name:</b>&nbsp;</td>
+                        <td class="smallcopy" nowrap><input name="_Shopper.BillingFirstName" type="text"
+                                                            class="inputBox" size="32"
+                                                            _label="<br>First Name"></td>
+                    </tr>
+                    <tr valign=middle>
+                        <td class="bodycopy" align=right><b>Last Name:</b>&nbsp;</td>
+                        <td class="smallcopy nowrap"><input name="_Shopper.BillingLastName" type="text"
+                                                            class="inputBox" size="32"
+                                                            _label="<br>Last Name"></td>
+                    </tr>
+                    <tr valign=middle>
+                        <td class="bodycopy" align=right><b>E-mail Address:</b>&nbsp;</td>
+                        <td class="smallcopy" nowrap><input name="_Shopper.BillingEmail" type="text"
+                                                            class="inputBox" size="32"
+                                                            _label="<br>E-mail Address"></td>
+                    </tr>
 
-                    <!--BEGINS THE TABLE THAT HOLDS CURRENCY-->
-                    <!--the following allows your customers to change the currency in the shopping cart-->
-                    <table border=0 cellpadding=0 cellspacing=0>
+                    <tr valign=middle>
+                        <td class="bodycopy" align=right nowrap><b>Retype E-mail Address:</b>&nbsp;</td>
+                        <td class="smallcopy" nowrap><input name="_Shopper.BillingEmailRetype" type="text"
+                                                            class="inputBox" size="32"
+                                                            _label="<br>Retype E-mail Address"></td>
+                    </tr>
+                    <tr valign=middle>
+                        <td class="bodycopy" align=right>Company:&nbsp;</td>
+                        <td class="smallcopy" nowrap><input name="_Shopper.BillingCompany" type="text"
+                                                            class="inputBox" size="32"></td>
+                    </tr>
+                    <tr valign=middle>
+                        <td class="bodycopy" align=right><b>Address 1:</b>&nbsp;</td>
+                        <td class="smallcopy" nowrap><input name="_Shopper.BillingAddress1" type="text"
+                                                            class="inputBox" size="32"
+                                                            _label="<br>Address 1"></td>
+                    </tr>
+                    <tr valign=middle>
+                        <td class="bodycopy" align=right>Address 2:&nbsp;</td>
+                        <td class="smallcopy" nowrap><input name="_Shopper.BillingAddress2" type="text"
+                                                            class="inputBox" size="32"></td>
+                    </tr>
+                    <tr valign=middle>
+                        <td class="bodycopy" align=right><b>City:</b>&nbsp;</td>
+                        <td class="smallcopy" nowrap><input name="_Shopper.BillingCity" type="text"
+                                                            class="inputBox" size="32"
+                                                            _label="<br>City"></td>
+                    </tr>
+                    <tr valign=middle>
+                        <td class="bodycopy" align=right>State/Province:&nbsp;</td>
+                        <td class="smallcopy" nowrap><input name="_Shopper.BillingState" type="text"
+                                                            class="inputBox" size="32"
+                                                            _label="<br>State/Province"></td>
+                    </tr>
+                    <tr valign=middle>
+                        <td class="bodycopy" align=right><b>Zip/Postal Code:</b>&nbsp;</td>
+                        <td class="smallcopy" nowrap><input name="_Shopper.BillingZip" type="text"
+                                                            class="inputBox" size="32"
+                                                            _label="<br>Zip/Postal Code"></td>
+                    </tr>
+                    <tr valign=middle>
+                        <td class="bodycopy" align=right><b>Country:</b>&nbsp;</td>
+                        <td class="smallcopy" nowrap><select name="_Shopper.BillingCountry"
+                                                             class="inputBox"></select></td>
+                    </tr>
+                    <tr valign=middle>
+                        <td class="bodycopy" align=right><b>Phone:</b>&nbsp;</td>
+                        <td class="smallcopy" nowrap><input name="_Shopper.BillingPhone" type="text"
+                                                            class="inputBox" size="32"
+                                                            _label="<br>Phone"></td>
+                    </tr>
+                    <tr valign=middle>
+                        <td class="bodycopy" align=right>VAT ID:&nbsp;</td>
+                        <td class="smallcopy" nowrap><input name="_Shopper.VatID" type="text" class="inputBox"
+                                                            size="32"></td>
+                    </tr>
+                    <tr valign=middle>
+                        <td></td>
+                        <td class="smallcopy">_Cart.VatIDHelpLink</td>
+                    </tr>
+                </table>
+                <!--ENDS THE PERSONAL INFORMATION TABLE-->
+
+            </td>
+            <td width=5></td>
+            <td width=1 bgcolor="#D2D2D2"></td>
+            <td width=5></td>
+            <td class="bodycopy">
+
+                <!-- the following span checks to see if there is any charges for this order. If it is a free upgrade and there are no charges, the billing information table will not be displayed-->
+                <span _if="_Cart.GrandTotal > 0">
+                    <!--BEGINS THE BILLIENG INFORMATION HEADER TABLE-->
+                    <table border=0 cellpadding=0 cellspacing=0 width=100%>
                         <tr valign=middle>
-                            <td class="bodycopy" align=right><b>Currency:</b>&nbsp;</td>
-                            <td class="bodycopy"><select name="_Shopper.Currency" class="inputBox"></select></td>
+                            <td class="bodycopy" bgcolor="#D2D2D2" colspan=2><b>BILLING INFORMATION</b></td>
+                        </tr>
+                        <tr><td height=10></td>
+                    </tr>
+                    </table>
+                    <!--ENDS THE BILLING INFORMATION HEADER TABLE-->
+
+
+                    <!--BEGINS THE BILLIING INFORMATION TABLE-->
+                    <table border=0 cellpadding=0 cellspacing=0 width=100%>
+                        <tr>
+                            <td class="bodycopy">_Cart.CurrencyMessage</td>
+                        </tr>
+                        <tr>
+                            <td height=10></td>
+                        </tr>
+                        <tr>
+                            <td>
+
+                                <!--BEGINS THE TABLE THAT HOLDS FIELDS FOR THE BILLING INFORMATION TABLE-->
+                                <table border=0 cellpadding=0 cellspacing=0>
+                                    <tr>
+                                        <td class="bodycopy" width="160"
+                                            align=right><b>Credit Card Number:</b>&nbsp;</td>
+                                        <td class="smallcopy" nowrap><input name="_Shopper.PaymentCardNumber"
+                                                                            type="text"
+                                                                            class="inputBox"
+                                                                            size="32"
+                                                                            _label="<br>Credit Card Number"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bodycopy" width="160"
+                                            align=right><b>Card Security Code:</b>&nbsp;</td>
+                                        <td class="smallcopy"><input name="_Shopper.PaymentCardCSC" type="text" size="5"
+                                                                     class="inputBox"> _Shopper.PaymentCardCSCHelpLink</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bodycopy" width="160" align=right><b>Expiration Date:</b>&nbsp;</td>
+                                        <td class="smallcopy">
+
+
+                                            <!--BEGINS THE TABLE THAT HOLDS THE DROPDOWN MENUS FOR THE BILLING TABLE SO THAT THEY ALIGN CORRECTLY-->
+                                            <table border=0 cellpadding=0 cellspacing=0>
+                                            <tr valign=middle>
+                                            <td><select name="_Shopper.PaymentCardMonth" class="inputBox"></select></td>
+                                            <td class="bodycopy">&nbsp;/&nbsp;</td>
+                                            <td class="smallcopy"><select name="_Shopper.PaymentCardYear"
+                                                                          class="inputBox"></select></td>
+                                            </tr>
+                                            </table>
+                                            <!--ENDS THE TABLE THAT HOLDS THE DROPDOWN MENUS FOR THE BILLING TABLE SO THAT THEY ALIGN CORRECTLY-->
+
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!--ENDS THE TABLE THAT HOLDS FIELDS FOR THE BILLING INFORMATION TABLE-->
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height=10></td>
+                        </tr>
+                        <tr>
+                            <td align=right nowrap>
+                                <img src="images/_AcceptedPayments.gif"
+                                     alt="Major credit cards accepted - Visa, MasterCard, American Express &amp; Discover"
+                                     width="151" align="bottom">&nbsp;
+                                <img src="images/_Trustmark.gif"
+                                     alt="eSellerate Privacy Statement"
+                                     width="116"
+                                     height="31" border="0"
+                                     align="bottom"
+                                     hspace=10>&nbsp;
+                                <img src="images/_SSL.gif" width="40" height="40" border="0" align=bottom>
+                            </td>
                         </tr>
                     </table>
-                    <!--ENDS THE TABLE THAT HOLDS CURRENCY-->
+                    <!--ENDS THE BILLING INFORMATION TABLE-->
 
-                </td>
-                <td align=right>
+                </span>
 
-                </td>
-            </tr>
-        </table></p>
-        <!--ENDS THE TABLE THAT HOLDS THE CURRENCY AND COUPON TABLES-->
-        <p>
-		<!--BEGINS THE TABLE SHOPPING CART TABLE-->
-        <table border=0 cellpadding=4 cellspacing=1 bgcolor="#D2D2D2">
-            <tr valign=top bgcolor="#E8E8E8">
-                <td class="bodycopy" align="left"><b>Product</b></td>
-                <td class="bodycopy" align="left"><b>Quantity</b></td>
-                <td class="bodycopy" align="left"><b>Price</b></td>
-                <td class="bodycopy" align="left"><b>Total</b></td>
-                <td class="bodycopy">&nbsp;</td>
-            </tr>
-            <!--BEGINS THE LOOP FOR THE ROWS OF THE SHOPPING CART-->
-            <!--the following loop runs through for each product that has been added to your cart-->
-            <_LOOP var="_Cart">
-                <_ROW>
-                    <_COLUMN>
-                        <tr valign=top bgcolor="#FFFFFF">
-                            <td class="bodycopy" align="left">_cartitem.skuname</td>
-                            <td class="bodycopy" align="left"><input name="_cartitem.quantity" type="text" id="_cartitem.quantity" size="3" maxlength="3" class="inputBox"> decks
-                                <!-- If it's a Planning Poker deck... display "(Each deck is for 4 people)" --><span _if="_cartitem.SkuRefNum = 'SKU89825823895' "><br>
- (Each deck is for 4 people)</span>
-                            </td>
-                            <td class="bodycopy" align="left">_cartitem.priceeach</td>
-                            <td class="bodycopy" align="left">_cartitem.priceext </td>
-                            <td class="bodycopy"><input name="Submit222" type="submit" value="Recalculate" class="inputSubmit" _cmd="goto" _Page="_Layout.CurrentPage"></td>
-                        </tr>
-                    </_COLUMN>
-                </_ROW>
-            </_LOOP>
-            <!--ENDS THE LOOP FOR THE ROWS OF THE SHOPPING CART-->
-        </table></p>
-        <!--ENDS THE TABLE THAT HOLDS THE SHOPPING CART-->
-
-
-        <p>
-            <b>Quick links for adding more:</b><br/>
-			Add one <a href="http://store.esellerate.net/s.asp?s=STR3991639020&Cmd=BUY&SKURefnum=SKU89825823895">Planning Poker</a> deck to the order<br/>
-			Add one <a href="http://store.esellerate.net/s.asp?s=STR3991639020&Cmd=BUY&SKURefnum=SKU33361778440">Jimmy Cards Red</a> deck to the order<br/>
-			Add one <a href="http://store.esellerate.net/s.asp?s=STR3991639020&Cmd=BUY&SKURefnum=SKU59616654790">Jimmy Cards Black</a> deck (for mature teams) to the order<br/>
-			Add one <a href="http://store.esellerate.net/s.asp?s=STR3991639020&Cmd=BUY&SKURefnum=SKU06925438075">Jimmy Cards Blue</a> deck (for leaders) to the order<br/>
-        </p>
-
-		<p>
-			<b>Questions</b><br/>
-			<a href="https://www.crisp.se/bocker-och-produkter/planning-poker">What is Planning Poker?</a><br/>
-			<a href="https://www.crisp.se/bocker-och-produkter/jimmy-cards">What are Jimmy Cards?</a>
-		</p>
-
-        <br/>
-
-
-        <!--BEGINS THE CONDITIONAL ELEMENTS FOR ESELLERATE OFFERINGS-->
-        <!--the following span checks to see if eCD or eDS are offered. If neither are offered, then table will not show-->
-<span _if="_eCD.IsOffered OR _eDS.IsOffered">
-<!--BEGINS THE TABLE THAT HOLDS ESELLERATE OFFERING HEADER-->
-<p><table border=0 cellpadding=0 cellspacing=0 width=100%>
-<tr valign=middle>
-<td class="bodycopy" bgcolor="#D2D2D2"><b>ESELLERATE OFFERINGS</b></td>
-</tr>
-<tr><td height=10></td></tr>
-</table>
-    <!--ENDS TABLE THAT HOLDS ESELLERATE OFFERINGS HEADER-->
-    <!--BEGINS TABLE THAT HOLDS ECD AND EDS OFFERINGS-->
-<table border=0 cellpadding=5 cellspacing=1 width=100% bgcolor="#D2D2D2">
-<!--BEGINS CONDITIONAL TERMS FOR ECD OFFERING-->
-    <!--the following span checks to see if eCD is offered. If not, the table row will not display-->
-<span _if="_eCD.IsOffered">
-<tr valign=top bgcolor="#FFFFFF">
-<td class="bodycopy" width=5% align=center><img src="images/_eCD_med.gif"></td>
-<td class="bodycopy"><b>This order shipped on CD &#8212; <span class="price">_eCD.PriceEach</span></b><br>
-eCD - _eCD.Description<br>
-_Cart.ECDHelpLink</td>
-<td align=right width=5%><input type="submit" name="submiteCD" value="add to cart" class="inputSubmit" _cmd="buy" _Page="_Layout.CartPage" _skurefNum="_eCD.SKURefNum"></td>
-</tr>
-</span>
-    <!--ENDS CONDITIONAL TERMS FOR ECD-->
-    <!--BEGINS CONDITIONAL TERMS FOR EDS-->
-    <!--the following span checks to see if eDS is offered. If not, the table row will not display-->
-<span _if="_eDS.IsOffered">
-<tr valign=top bgcolor="#FFFFFF">
-<td class="bodycopy" width=5% align=center><img src="images/_eDS_med.gif"></td>
-<td class="bodycopy"><b>This order protected with eSellerate Download Service &#8212; <span class="price">_eDS.PriceEach</span></b><br>
-eDS - _eDS.Description<br>
-_Cart.EDSHelpLink</td>
-<td align=right width=5%><input name="submiteDS" type="submit" value="add to cart" class="inputSubmit" _cmd="buy" _Page="_Layout.CartPage" _skurefNum="_eDS.SKURefNum"></td>
-</tr>
-</span>
-    <!--ENDS CONDITIONAL TERMS FOR EDS-->
-</table></p>
-    <!--ENDS TABLE THAT HOLDS ECD AND EDS OFFERINGS-->
-</span>
-        <!--ENDS THE CONDITIONAL ELEMENTS FOR ESELLERATE OFFERINGS-->
-
-
-        <!--BEGINS CONDITIONAL STATEMENT FOR CROSS-SELL ITEMS-->
-        <!--the following span checks to see if you are offering any cross-sell items. If not then the section will not display-->
-<span _if="_CrossSell.ItemCount > 0">
-<!--BEGINS THE TABLE THAT HOLDS ESELLERATE OFFERING HEADER-->
-<p><table border=0 cellpadding=0 cellspacing=0 width=100%>
-<tr valign=middle>
-<td class="bodycopy" bgcolor="#D2D2D2"><b>ADDITIONAL OFFERINGS</b></td>
-</tr>
-<tr><td height=10></td></tr>
-</table>
-    <!--ENDS TABLE THAT HOLDS ESELLERATE OFFERINGS HEADER-->
-    <!--BEGIN TABLE THAT HOLDS THE CROSS-SELL OFFERINGS-->
-<table id="Table1" border=0 cellpadding=5 cellspacing=1 width=100% bgcolor="#D2D2D2">
-<!--the following loop runs through for each crosssell item that you are offering-->
-<_LOOP var="_CrossSell">
-<_ROW>
-<_COLUMN>
-<!--the following span checks to see if there is a CrossSell heading or Message. If there are none, the table row will not display-->
-<span _if = "_CrossSellItem.ShowHeading">
-<tr valign=top bgcolor="#FFFFFF">
-<td colspan=3 class="bodycopy"><b>_CrossSellItem.Heading</b><br>
-_CrossSellItem.Message</td>
-</tr>
-</span>
-<TR valign=top bgcolor="#FFFFFF">
-<TD align="center" width="5%">
-<!--the following span checks to see if there is a long description available for the cross-sell product. If there is, it will make the cross-sell product image a hyperlink to the appropirate 'more information' page. Otherwise it will just display the image-->
-<span _if="_CrossSellItem.MoreInfoIsAvailable">
-<!-- CROSSELL-MOREINFO: span checks if there is an external URL AND a long description it should launch in new window  -->
-<span _if="_CrossSellItem.MoreInfoExternalURL != '' AND _CrossSellItem.LongDescription != ''"><a href="_CrossSellItem.MoreInfoExternalURL" class="smallcopy" target="_blank"><IMG src="_CrossSellItem.ImageURL" border=0></A></span>
-    <!-- CROSSELL-MOREINFO: span checks if there is only a long description, it will launch to designated MoreInfo.htm page -->
-<span _if="_CrossSellItem.MoreInfoExternalURL = '' AND _CrossSellItem.LongDescription != ''"><a href="#" class="smallcopy" _skurefnum="_CrossSellItem.SkuRefNum"  _cmd="Goto" _Page="OnePageCrossSellInfo.htm"><IMG src="_CrossSellItem.ImageURL" border=0></A></span>
-</span>
-<span _if="NOT _CrossSellItem.MoreInfoIsAvailable">
-<IMG src="_CrossSellItem.ImageURL" border=0>
-</span></TD>
-<TD class="bodycopy"><b>_CrossSellItem.SkuName</b> _CrossSellItem.SupplementalMessage<BR>
-Your Price: <span class="redcopy"><b>_CrossSellItem.PriceEach</b></span> Regular Price: <span class="redcopy"><b>_CrossSellItem.RegularPrice</b></span> You Save: <span class="redcopy"><b>_CrossSellItem.AmountSaved (_CrossSellItem.PercentSaved)</b></span>
-<br><br>
-_CrossSellItem.Description
-    <!-- CROSSELL-MOREINFO: span checks if there is an external URL AND a long description it should launch in new window  -->
-<span _if="_CrossSellItem.MoreInfoExternalURL != '' AND _CrossSellItem.LongDescription != ''"><a href="_CrossSellItem.MoreInfoExternalURL" class="smallcopy" target="_blank">more info</a></span>
-    <!-- CROSSELL-MOREINFO: span checks if there is only a long description, it will launch to designated MoreInfo.htm page -->
-<span _if="_CrossSellItem.MoreInfoExternalURL = '' AND _CrossSellItem.LongDescription != ''"><a href="#" class="smallcopy" _skurefnum="_CrossSellItem.SkuRefNum"  _cmd="Goto" _Page="OnePageCrossSellInfo.htm">more info</a></span></TD>
-<TD align="right" width="5%"><input type="submit" name="Submit" value="add to Cart" class="inputSubmit" _cmd="Buy" _Page="_Layout.CartPage" _SkuRefNum="_CrossSellItem.SkuRefNum" _CSGroupRefNum="_CrossSellItem.GroupRefNum"></TD>
-</TR>
-</_COLUMN>
-</_ROW>
-</_LOOP>
-</TABLE>
-    <!--ENDS TABLE THAT HOLDS THE CROSS-SELL OFFERINGS-->
-</span>
-        <!--ENDS CONDITIONAL STATEMENT FOR CROSS-SELL ITEMS-->
-
-
-        <!--This page is designed to display two possible layouts...One with shipping information and one without. The following span checks to see if there is any shipping required and will display if there is NO shipping required-->
-<span _if="not _Shopper.ShippingIsRequired">
-<!--BEGINS THE TABLE THAT HOLDS THE PERSONAL INFORMATION, BILLING INFORMATION AND FINAL STEPS TABLES-->
-<p><table border=0 cellpadding=0 cellspacing=0 width=100%>
-<tr valign=top>
-<td class="bodycopy">
-
-	<!--BEGINS THE TABLE THAT HOLDS THE PERSONAL INFORMATION HEADER-->
-	<table border=0 cellpadding=0 cellspacing=0 width=100%>
-	<tr valign=middle>
-	<td class="bodycopy" bgcolor="#D2D2D2"><b>PERSONAL INFORMATION AND SHIPPING ADDRESS</b></td>
-	</tr>
-	<tr><td height=10></td></tr>
-	</table>
-    <!--ENDS THE TABLE THAT HOLDS THE PERSONAL INFORMATION HEADER-->
-    <!--BEGINS THE TABLE THAT HOLDS PERSONAL INFORMATION-->
-	<table border=0 cellpadding=0 cellspacing=0>
-        <tr>
-            <td colspan="2" class="redcopy"><img src="images/_required.gif"><b>indicates required fields</b></td>
+                <!--BUTTON THAT TAKES THIS INFORMATION TO THE NEXT PAGE-->
+                <p align=left>
+                    <input name="" type="submit" value="Continue to the confirmation page" class="inputSubmit"
+                           _cmd="Goto" _Page="OnePageConfirmation.htm" _CausesValidation=1>
+                </p>
+            </td>
         </tr>
+    </table>
+    <!--ENDS THE TABLE THAT HOLDS THE PERSONAL INFORMATION & BILLING INFORMATION TABLES -->
 
-	<tr valign=middle>
-	<td class="bodycopy" align=right width=160><b>First Name:</b>&nbsp;</td>
-	<td class="smallcopy" nowrap><input name="_Shopper.BillingFirstName" type="text" class="inputBox" size="32" _label="<br>First Name"></td>
-	</tr>
-	<tr valign=middle>
-	<td class="bodycopy" align=right><b>Last Name:</b>&nbsp;</td>
-	<td class="smallcopy nowrap"><input name="_Shopper.BillingLastName" type="text" class="inputBox" size="32" _label="<br>Last Name"></td>
-	</tr>
-	<tr valign=middle>
-	<td class="bodycopy" align=right><b>E-mail Address:</b>&nbsp;</td>
-	<td class="smallcopy" nowrap><input name="_Shopper.BillingEmail" type="text" class="inputBox" size="32" _label="<br>E-mail Address"></td>
-	</tr>
-
-	<tr valign=middle>
-	<td class="bodycopy" align=right nowrap><b>Retype E-mail Address:</b>&nbsp;</td>
-	<td class="smallcopy" nowrap><input name="_Shopper.BillingEmailRetype" type="text" class="inputBox" size="32" _label="<br>Retype E-mail Address"></td>
-	</tr>
-	<tr valign=middle>
-	<td class="bodycopy" align=right>Company:&nbsp;</td>
-	<td class="smallcopy" nowrap><input name="_Shopper.BillingCompany" type="text" class="inputBox" size="32"></td>
-	</tr>
-	<tr valign=middle>
-	<td class="bodycopy" align=right><b>Address 1:</b>&nbsp;</td>
-	<td class="smallcopy" nowrap><input name="_Shopper.BillingAddress1" type="text" class="inputBox" size="32" _label="<br>Address 1"></td>
-	</tr>
-	<tr valign=middle>
-	<td class="bodycopy" align=right>Address 2:&nbsp;</td>
-	<td class="smallcopy" nowrap><input name="_Shopper.BillingAddress2" type="text" class="inputBox" size="32"></td>
-	</tr>
-	<tr valign=middle>
-	<td class="bodycopy" align=right><b>City:</b>&nbsp;</td>
-	<td class="smallcopy" nowrap><input name="_Shopper.BillingCity" type="text" class="inputBox" size="32" _label="<br>City"></td>
-	</tr>
-	<tr valign=middle>
-	<td class="bodycopy" align=right>State/Province:&nbsp;</td>
-	<td class="smallcopy" nowrap><input name="_Shopper.BillingState" type="text" class="inputBox" size="32" _label="<br>State/Province"></td>
-	</tr>
-	<tr valign=middle>
-	<td class="bodycopy" align=right><b>Zip/Postal Code:</b>&nbsp;</td>
-	<td class="smallcopy" nowrap><input name="_Shopper.BillingZip" type="text" class="inputBox" size="32" _label="<br>Zip/Postal Code"></td>
-	</tr>
-	<tr valign=middle>
-	<td class="bodycopy" align=right><b>Country:</b>&nbsp;</td>
-	<td class="smallcopy" nowrap><select name="_Shopper.BillingCountry" class="inputBox"></select></td>
-	</tr>
-	<tr valign=middle>
-	<td class="bodycopy" align=right><b>Phone:</b>&nbsp;</td>
-	<td class="smallcopy" nowrap><input name="_Shopper.BillingPhone" type="text" class="inputBox" size="32" _label="<br>Phone"></td>
-	</tr>
-	<tr valign=middle>
-	<td class="bodycopy" align=right>VAT ID:&nbsp;</td>
-	<td class="smallcopy" nowrap><input name="_Shopper.VatID" type="text" class="inputBox" size="32"></td>
-	</tr>
-	<tr valign=middle>
-	<td></td>
-	<td class="smallcopy">_Cart.VatIDHelpLink</td>
-	</tr>
-	</table>
-    <!--ENDS THE PERSONAL INFORMATION TABLE-->
-
-</td>
-<td width=5></td>
-<td width=1 bgcolor="#D2D2D2"></td>
-<td width=5></td>
-<td class="bodycopy">
-
-	<!-- the following span checks to see if there is any charges for this order. If it is a free upgrade and there are no charges, the billing information table will not be displayed-->
-	<span _if="_Cart.GrandTotal > 0">
-	<!--BEGINS THE BILLIENG INFORMATION HEADER TABLE-->
-	<table border=0 cellpadding=0 cellspacing=0 width=100%>
-	<tr valign=middle>
-	<td class="bodycopy" bgcolor="#D2D2D2" colspan=2><b>BILLING INFORMATION</b></td>
-	</tr> <tr><td height=10></td>
-	</tr>
-	</table>
-        <!--ENDS THE BILLING INFORMATION HEADER TABLE-->
-
-
-        <!--BEGINS THE BILLIING INFORMATION TABLE-->
-	<table border=0 cellpadding=0 cellspacing=0 width=100%>
-	<tr>
-	<td class="bodycopy">_Cart.CurrencyMessage</td>
-	</tr>
-	<tr>
-	<td height=10></td>
-	</tr>
-	<tr>
-	<td>
-
-		<!--BEGINS THE TABLE THAT HOLDS FIELDS FOR THE BILLING INFORMATION TABLE-->
-		<table border=0 cellpadding=0 cellspacing=0>
-		<tr>
-		<td class="bodycopy" width="160" align=right><b>Credit Card Number:</b>&nbsp;</td>
-		<td class="smallcopy" nowrap><input name="_Shopper.PaymentCardNumber" type="text" class="inputBox" size="32" _label="<br>Credit Card Number"></td>
-		</tr>
-		<tr>
-		<td class="bodycopy" width="160" align=right><b>Card Security Code:</b>&nbsp;</td>
-		<td class="smallcopy"><input name="_Shopper.PaymentCardCSC" type="text" size="5" class="inputBox"> _Shopper.PaymentCardCSCHelpLink</td>
-		</tr>
-		<tr>
-		<td class="bodycopy" width="160" align=right><b>Expiration Date:</b>&nbsp;</td>
-		<td class="smallcopy">
-
-
-			<!--BEGINS THE TABLE THAT HOLDS THE DROPDOWN MENUS FOR THE BILLING TABLE SO THAT THEY ALIGN CORRECTLY-->
-			<table border=0 cellpadding=0 cellspacing=0>
-			<tr valign=middle>
-			<td><select name="_Shopper.PaymentCardMonth" class="inputBox"></select></td>
-			<td class="bodycopy">&nbsp;/&nbsp;</td>
-			<td class="smallcopy"><select name="_Shopper.PaymentCardYear" class="inputBox"></select></td>
-			</tr>
-			</table>
-            <!--ENDS THE TABLE THAT HOLDS THE DROPDOWN MENUS FOR THE BILLING TABLE SO THAT THEY ALIGN CORRECTLY-->
-
-		</td>
-		</tr>
-		</table>
-        <!--ENDS THE TABLE THAT HOLDS FIELDS FOR THE BILLING INFORMATION TABLE-->
-
-	</td>
-	</tr>
-	<tr><td height=10></td></tr>
-	<tr>
-	<td align=right nowrap><img src="images/_AcceptedPayments.gif" alt="Major credit cards accepted - Visa, MasterCard, American Express &amp; Discover" width="151" align="bottom">&nbsp;<img src="images/_Trustmark.gif" alt="eSellerate Privacy Statement" width="116" height="31" border="0" align="bottom" hspace=10>&nbsp;<img src="images/_SSL.gif" width="40" height="40" border="0" align=bottom></td>
-	</tr>
-	</table>
-        <!--ENDS THE BILLING INFORMATION TABLE-->
-	</span>
-
-
-    <!--BEGINS THE CONTACT OPTIONS TABLE-->
-
-    <!--ENDS THE CONTACT OPTIONS TABLE-->
-
-    <!--BEGINS THE SERIAL NUMBER PROMPT-->
-    <!--the following span checks to see if the order requires a serial number. If it does not, the section will not appear in the cart-->
-	<span _if="_Cart.SerialNumberHasPromptedData">
-	<P><strong>One of the products you have chosen requires additional information:</strong>
-	<table border=0 cellpadding=0 cellspacing=0>
-	<tr><td colspan=2 height=10></td></tr>
-        <!-- the following loop is needed to run through each serial number option that may be  available for the order-->
-	<_LOOP var="_Cart">
-	<_ROW>
-	<_COLUMN>
-	<span _if="_CartItem.SerialNumberHasPromptedData">
-	<tr valign=middle>
-	<td class="bodycopy" align=right>_CartItem.SerialNumberPrompt&nbsp;</td>
-	<td class="smallcopy"><input name="_CartItem.SerialNumberPromptedData" type="text" class="inputBox" size="32"> _CartItem.SerialNumberPromptHelpLink</td>
-	</tr>
-	</span>
-	</_COLUMN>
-	</_ROW>
-	</_LOOP>
-	</table>
-	</span>
-        <!--ENDS THE SERIAL NUMBER PROMPT-->
-
-
-        <!--BUTTON THAT TAKES THIS INFORMATION TO THE NEXT PAGE-->
-        <P align=left><input name="" type="submit" value="Continue to the confirmation page" class="inputSubmit" _cmd="Goto" _Page="OnePageConfirmation.htm" _CausesValidation=1></p>
-
-
-        </td>
-        </tr>
-        </table></p>
-        <!--ENDS THE TABLE THAT HOLDS THE PERSONAL INFORMATION, BILLING INFORMATION AND FINAL STEPS TABLES-->
-        </span>
-
-
-
-
-
-
-        <!--the following is the second layout possible determined by whether or not shipping is required. If shipping is required, the following span will be displayed.-->
-<span _if="_Shopper.ShippingIsRequired">
-<!--BEGINS THE TABLE THAT HOLDS THE PERSONAL INFORMATION, BILLING INFORMATION AND FINAL STEPS TABLES-->
-<p><table border=0 cellpadding=0 cellspacing=0 width=100%>
-<tr valign=top>
-<td class="bodycopy">
-
-
-	<!--BEGINS THE TABLE THAT HOLDS THE PERSONAL INFORMATION HEADER-->
-	<table border=0 cellpadding=0 cellspacing=0 width=100%>
-	<tr valign=middle>
-	<td class="bodycopy" bgcolor="#D2D2D2"><b>PERSONAL INFORMATION</b></td>
-	</tr>
-	<tr><td height=10></td></tr>
-	</table>
-    <!--ENDS THE TABLE THAT HOLDS THE PERSONAL INFORMATION HEADER-->
-
-
-    <!--BEGINS THE TABLE THAT HOLDS PERSONAL INFORMATION-->
-	<table border=0 cellpadding=0 cellspacing=0>
-	<tr valign=middle>
-	<td class="bodycopy" align=right><b>First Name:</b>&nbsp;</td>
-	<td class="smallcopy" nowrap><input name="_Shopper.BillingFirstName" type="text" class="inputBox" size="32" _label="<br>First Name"></td>
-	</tr>
-	<tr valign=middle>
-	<td class="bodycopy" align=right><b>Last Name:</b>&nbsp;</td>
-	<td class="smallcopy" nowrap><input name="_Shopper.BillingLastName" type="text" class="inputBox" size="32" _label="<br>Last Name"></td>
-	</tr>
-	<tr valign=middle>
-	<td class="bodycopy" align=right><b>E-mail Address:</b>&nbsp;</td>
-	<td class="smallcopy" nowrap><input name="_Shopper.BillingEmail" type="text" class="inputBox" size="32" _label="<br>E-mail Address"></td>
-	</tr>
-	<tr valign=middle>
-	<td class="bodycopy" align=right nowrap><b>Retype E-mail Address:</b>&nbsp;</td>
-	<td class="smallcopy" nowrap><input name="_Shopper.BillingEmailRetype" type="text" class="inputBox" size="32" _label="<br>Retype E-mail Address"></td>
-	</tr>
-	<tr valign=middle>
-	<td class="bodycopy" align=right>Company:&nbsp;</td>
-	<td class="smallcopy" nowrap><input name="_Shopper.BillingCompany" type="text" class="inputBox" size="32"></td>
-	</tr>
-	<tr valign=middle>
-	<td class="bodycopy" align=right><b>Address 1:</b>&nbsp;</td>
-	<td class="smallcopy" nowrap><input name="_Shopper.BillingAddress1" type="text" class="inputBox" size="32" _label="<br>Address 1"></td>
-	</tr>
-	<tr valign=middle>
-	<td class="bodycopy" align=right>Address 2:&nbsp;</td>
-	<td class="smallcopy" nowrap><input name="_Shopper.BillingAddress2" type="text" class="inputBox" size="32"></td>
-	</tr>
-	<tr valign=middle>
-	<td class="bodycopy" align=right><b>City:</b>&nbsp;</td>
-	<td class="smallcopy" nowrap><input name="_Shopper.BillingCity" type="text" class="inputBox" size="32" _label="<br>City"></td>
-	</tr>
-	<tr valign=middle>
-	<td class="bodycopy" align=right><b>State/Province:</b>&nbsp;</td>
-	<td class="smallcopy" nowrap><input name="_Shopper.BillingState" type="text" class="inputBox" size="32" _label="<br>State/Province"></td>
-	</tr>
-	<tr valign=middle>
-	<td class="bodycopy" align=right><b>Zip/Postal Code:</b>&nbsp;</td>
-	<td class="smallcopy" nowrap><input name="_Shopper.BillingZip" type="text" class="inputBox" size="32" _label="<br>Zip/Postal Code"></td>
-	</tr>
-	<tr valign=middle>
-	<td class="bodycopy" align=right><b>Country:</b>&nbsp;</td>
-	<td class="smallcopy" nowrap><select name="_Shopper.BillingCountry" class="inputBox"></select></td>
-	</tr>
-	<tr valign=middle>
-	<td class="bodycopy" align=right><b>Phone:</b>&nbsp;</td>
-	<td class="smallcopy" nowrap><input name="_Shopper.BillingPhone" type="text" class="inputBox" size="32" _label="<br>Phone"></td>
-	</tr>
-	<tr valign=middle>
-	<td class="bodycopy" align=right>VAT ID:&nbsp;</td>
-	<td class="smallcopy" nowrap><input name="_Shopper.VatID" type="text" class="inputBox" size="32"></td>
-	</tr>
-	<tr valign=middle>
-	<td></td>
-	<td class="smallcopy">_Cart.VatIDHelpLink</td>
-	</tr>
-	<tr valign=middle>
-	<td height=10 colspan=2></td>
-	</tr>
-	<tr valign=middle>
-	<td class="bodycopy" nowrap colspan=2 align=right>
-
-		<table border=0 cellpadding=0 cellspacing=0>
-		<tr valign=middle>
-		<td><input name="_Shopper.CanSendProductOffers" type="checkbox" value="" checked></td>
-		<td class="bodycopy" nowrap>&nbsp;Send me information about product updates and offers</td>
-		</tr>
-		</table>
-	</td>
-	</tr>
-	</table>
-    <!--ENDS THE PERSONAL INFORMATION TABLE-->
-
-
-    <!--BEGINS THE SERIAL NUMBER PROMPT-->
-    <!--the following checks to see if the order requires serial number information. If not, it will not display-->
-	<span _if="_Cart.SerialNumberHasPromptedData">
-	<P><strong>One of the products you have chosen requires additional information:</strong>
-	<table border=0 cellpadding=0 cellspacing=0>
-	<tr><td colspan=2 height=10></td></tr>
-        <!-- the following loop is required to run through each possible serial number option-->
-	<_LOOP var="_Cart">
-	<_ROW>
-	<_COLUMN>
-	<span _if="_CartItem.SerialNumberHasPromptedData">
-	<tr valign=middle>
-	<td class="bodycopy" align=right>_CartItem.SerialNumberPrompt&nbsp;</td>
-	<td class="smallcopy"><input name="_CartItem.SerialNumberPromptedData" type="text" class="inputBox" size="32"> _CartItem.SerialNumberPromptHelpLink</td>
-	</tr>
-	</span>
-	</_COLUMN>
-	</_ROW>
-	</_LOOP>
-	</table>
-	</span>
-        <!--ENDS THE SERIAL NUMBER PROMPT-->
-
-        </td>
-        <td width=5></td>
-        <td width=1 bgcolor="#D2D2D2"></td>
-        <td width=5></td>
-        <td class="bodycopy">
-
-            <!--BEGINS THE FINAL STEPS HEADER TABLE-->
-            <table border=0 cellpadding=0 cellspacing=0 width=100%>
-                <tr valign=middle>
-                    <td class="bodycopy" bgcolor="#D2D2D2"><b>SHIPPING INFORMATION</b></td>
-                </tr>
-                <tr>
-                    <td height=10></td>
-                </tr>
-            </table>
-            <!--ENDS THE FINAL STEPS HEADER TABLE-->
-
-            <table border=0 cellpadding=0 cellspacing=0>
-                <tr valign=middle>
-                    <td><input name="_Shopper.ShippingIsSameAsBilling" type="checkbox" value="checkbox" checked></td>
-                    <td class="bodycopy" nowrap>&nbsp;Shipping Address is same as Billing Address</td>
-                </tr>
-                <tr>
-                    <td colspan=2 height=10></td>
-                </tr>
-            </table>
-
-
-            <!--BEGINS THE TABLE THAT HOLDS SHIPPING INFORMATION-->
-            <table border=0 cellpadding=0 cellspacing=0>
-                <tr valign=middle>
-                    <td class="bodycopy" align=right>Company:&nbsp;</td>
-                    <td class="smallcopy" nowrap><input name="_Shopper.ShippingCompany" type="text" class="inputBox" size="32"></td>
-                </tr>
-                <tr valign=middle>
-                    <td class="bodycopy" align=right><b>First Name:</b>&nbsp;</td>
-                    <td class="smallcopy" nowrap><input name="_Shopper.ShippingFirstName" type="text" class="inputBox" size="32" _label="<br>First Name"></td>
-                </tr>
-                <tr valign=middle>
-                    <td class="bodycopy" align=right><b>Last Name:</b>&nbsp;</td>
-                    <td class="smallcopy" nowrap><input name="_Shopper.ShippingLastName" type="text" class="inputBox" size="32" _label="<br>Last Name"></td>
-                </tr>
-                <tr valign=middle>
-                    <td class="bodycopy" align=right><b>Address 1:</b>&nbsp;</td>
-                    <td class="smallcopy" nowrap><input name="_Shopper.ShippingAddress1" type="text" class="inputBox" size="32" _label="<br>Address 1"></td>
-                </tr>
-                <tr valign=middle>
-                    <td class="bodycopy" align=right>Address 2:&nbsp;</td>
-                    <td class="smallcopy" nowrap><input name="_Shopper.ShippingAddress2" type="text" class="inputBox" size="32"></td>
-                </tr>
-                <tr valign=middle>
-                    <td class="bodycopy" align=right><b>City:</b>&nbsp;</td>
-                    <td class="smallcopy" nowrap><input name="_Shopper.ShippingCity" type="text" class="inputBox" size="32" _label="<br>City"></td>
-                </tr>
-                <tr valign=middle>
-                    <td class="bodycopy" align=right><b>State/Province:</b>&nbsp;</td>
-                    <td class="smallcopy" nowrap><input name="_Shopper.ShippingState" type="text" class="inputBox" size="32" _label="<br>State/Province"></td>
-                </tr>
-                <tr valign=middle>
-                    <td class="bodycopy" align=right><b>Zip/Postal Code:</b>&nbsp;</td>
-                    <td class="smallcopy" nowrap><input name="_Shopper.ShippingZip" type="text" class="inputBox" size="32" _label="<br>Zip/Postal Code"></td>
-                </tr>
-                <tr valign=middle>
-                    <td class="bodycopy" align=right><b>Country:</b>&nbsp;</td>
-                    <td class="smallcopy" nowrap><select name="_Shopper.ShippingCountry" class="inputBox"></select></td>
-                </tr>
-            </table>
-            <!--ENDS THE SHIPPING INFORMATION TABLE-->
-
-            <!--the following span checks to see is a shipping method is required. If not, it will not display-->
- 	<span _if="_Shopper.ShippingMethodIsRequired">
-	<!--BEGINS THE FINAL STEPS HEADER TABLE-->
-	<p><table border=0 cellpadding=0 cellspacing=0 width=100%>
-	<tr valign=middle>
-	<td class="bodycopy" bgcolor="#D2D2D2"><b>SHIPPING METHOD</b></td>
-	</tr>
-	<tr>
-	<td height=10></td>
-	</tr>
-	</table>
-        <!--ENDS THE FINAL STEPS HEADER TABLE-->
-
-
-        <!--BEGINS THE TABLE THAT HOLDS SHIPPING METHOD-->
-	<table border=0 cellpadding=0 cellspacing=0 width=100%>
-	<tr>
-	<td class="bodycopy" align=center>Click the button below to show shipping costs. If you modify the shipping country, you will need to recalculate your shipping costs.</td>
-	</tr>
-	<tr><td height=10></td>
-	<tr>
-	<td align=center><input name="submit01" type="submit" value="calculate shipping" class="inputSubmit" _cmd="goto" _Page="_Layout.CurrentPage"></td>
-	</tr>
-	<tr>
-	<td height=10></td>
-	</tr>
-	</table>
-
-        <!--the following checks to see if you ship to a specific region. If you DO NOT, the following span will display-->
-	<span _if="_shipping.itemcount = 0">
-	Sorry, we do not currently ship to your region.
-	</span>
-
-        <!-- the following checks to see if you ship to a specific regian. If you DO, the following span will display-->
-	<span _if="_shipping.itemcount != 0">
-	<table border=0 cellpadding=0 cellspacing=0>
-	<!--the following loop is needed to run through all the shipping methods you have available-->
-	<_LOOP var="_shipping" rows="5">
-	<_ROW>
-	<_COLUMN>
-	<tr valign=middle>
-	<td><input type="radio" name="_Shipping.SelectedShippingRefnum">&nbsp;</td>
-	<td class="bodycopy"><b>_ShippingItem.Amount</b> - _ShippingItem.Description</td>
-	</tr>
-	</_COLUMN>
-	</_ROW>
-	</_LOOP>
-	</table>
-	</span>
-        <!--ENDS THE SHIPPING METHOD TABLE-->
-
-        <!--the following span checks to see if there is an eCD as well. The following displays to let the customer know that it is shipped seperately-->
-	<span _if="_Shipping.ECDShippingMessage!=''">
-	<P>_Shipping.ECDShippingMessage
-	</span>
-
-</span>
-
-        </td>
-        </tr>
-        </table>
-        <!--ENDS THE TABLE THAT HOLDS THE PERSONAL INFORMATION, BILLING INFORMATION AND FINAL STEPS TABLES-->
-
-        <!-- the following checks to see if there are any charges to the order. If not the billing information table will not display-->
-<span _if="_Cart.GrandTotal > 0">
-<!--BEGINS THE BILLIENG INFORMATION HEADER TABLE-->
-<P><table border=0 cellpadding=0 cellspacing=0 width=100%>
-<tr valign=middle>
-<td class="bodycopy" bgcolor="#D2D2D2" colspan=2><b>BILLING INFORMATION</b></td>
-</tr> <tr><td height=10></td>
-</tr>
-</table>
-    <!--ENDS THE BILLING INFORMATION HEADER TABLE-->
-
-
-    <!--BEGINS THE BILLIING INFORMATION TABLE-->
-<table border=0 cellpadding=0 cellspacing=0 width=100%>
-<tr>
-<td class="bodycopy" colspan=2>_Cart.CurrencyMessage</td>
-</tr>
-<tr>
-<td height=10 colspan=2></td>
-</tr>
-<tr>
-<td>
-
-	<!--BEGINS THE TABLE THAT HOLDS FIELDS FOR THE BILLING INFORMATION TABLE-->
-	<table border=0 cellpadding=0 cellspacing=0>
-	<tr>
-	<td class="bodycopy" width="160" align=right><b>Credit Card Number:</b>&nbsp;</td>
-	<td class="smallcopy"><input name="_Shopper.PaymentCardNumber" type="text" class="inputBox" size="32" _label="<br>Credit Card Number"></td>
-	</tr>
-	<tr>
-	<td class="bodycopy" width="160" align=right>Card Security Code:&nbsp;</td>
-	<td class="smallcopy"><input name="_Shopper.PaymentCardCSC" type="text" size="5" class="inputBox"> _Shopper.PaymentCardCSCHelpLink</td>
-	</tr>
-	<tr>
-	<td class="bodycopy" width="160" align=right><b>Expiration Date:</b>&nbsp;</td>
-	<td class="smallcopy">
-
-		<!--BEGINS THE TABLE THAT HOLDS THE DROPDOWN MENUS FOR THE BILLING TABLE SO THAT THEY ALIGN CORRECTLY-->
-		<table border=0 cellpadding=0 cellspacing=0>
-		<tr valign=middle>
-		<td><select name="_Shopper.PaymentCardMonth" class="inputBox"></select></td>
-		<td class="bodycopy">&nbsp;/&nbsp;</td>
-		<td class="smallcopy"><select name="_Shopper.PaymentCardYear" class="inputBox"></select></td>
-		</tr>
-		</table>
-        <!--ENDS THE TABLE THAT HOLDS THE DROPDOWN MENUS FOR THE BILLING TABLE SO THAT THEY ALIGN CORRECTLY-->
-
-	</td>
-	</tr>
-	</table>
-    <!--ENDS THE TABLE THAT HOLDS FIELDS FOR THE BILLING INFORMATION TABLE-->
-
-</td>
-<td align=right nowrap><img src="images/_AcceptedPayments.gif" alt="Major credit cards accepted - Visa, MasterCard, American Express &amp; Discover" width="151" align="bottom">&nbsp;<img src="images/_Trustmark.gif" alt="eSellerate Privacy Statement" width="116" height="31" border="0" align="bottom" hspace=10>&nbsp;<img src="images/_SSL.gif" width="40" height="40" border="0" align=bottom></td>
-</tr>
-</table></p>
-    <!--ENDS THE BILLING INFORMATION TABLE-->
-
-
-    <!--OPTIONAL TEXT SAYING CREDIT CARD WONT BE BILLED AT THIS TIME-->
-<P align=center class="redcopy"><b>Your credit card will not be billed at this time.</b></p>
-</span>
-
-        <!--BUTTON THAT TAKES THIS INFORMATION TO THE NEXT PAGE-->
-        <P align=center><input name="" type="submit" value="Checkout" class="inputSubmit" _cmd="Goto" _Page="OnePageConfirmation.htm" _CausesValidation=1></p>
-        </span>
-
-
-</_goto>
 </_CONTENT>
 </BODY>
